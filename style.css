@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --ink: #201d1b;
+    --muted: #756b65;
+    --cream: #f8f4ef;
+    --paper: #fffdf9;
+    --wine: #6f2635;
+    --wine-dark: #481620;
+    --gold: #b88b46;
+    --line: #e7ddd4;
+    --shadow: 0 18px 50px rgba(47, 28, 20, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+.navbar {
+    align-items: center;
+    background: rgba(255, 253, 249, 0.95);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 1.15rem 6vw;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--wine);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--gold);
+    display: block;
+    font-size: 0.66rem;
+    letter-spacing: 0.28em;
+    line-height: 1;
+    margin-left: 0.2rem;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 2.25rem);
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 180ms ease;
+}
+
+.nav-links a:hover {
+    color: var(--wine);
+}
+
+.nav-icons {
+    align-items: center;
+    display: flex;
+    gap: 0.7rem;
+    position: relative;
+}
+
+.nav-icons input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    max-width: 105px;
+    outline: 0;
+    padding: 0.35rem 0;
+}
+
+.nav-icons > a:not(.cart-icon) {
+    color: var(--wine);
+    font-size: 1.2rem;
+}
+
+.cart-icon + .bx,
+.nav-icons > .bx {
+    color: var(--wine);
+    font-size: 1.35rem;
+}
+
+.badge {
+    background: var(--gold);
+    border-radius: 50%;
+    color: white;
+    font-size: 0.62rem;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    position: absolute;
+    right: -0.35rem;
+    text-align: center;
+    top: -0.35rem;
+    width: 1.1rem;
+}
+
+.hero-section {
+    align-items: center;
+    background: linear-gradient(90deg, rgba(30, 16, 14, 0.78), rgba(30, 16, 14, 0.17)), url('images/j1.jpg') center/cover;
+    display: flex;
+    min-height: 78vh;
+    padding: 7rem 10vw;
+}
+
+.hero-content {
+    color: #fffaf4;
+    max-width: 610px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+}
+
+.hero-content p {
+    color: #f2e6dc;
+    font-size: 1.05rem;
+    margin: 1.7rem 0 2rem;
+    max-width: 450px;
+}
+
+.btn-primary,
+.btn-secondary,
+.add-to-cart-btn {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: white;
+    padding: 1rem 1.45rem;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.add-to-cart-btn:hover {
+    background: var(--wine-dark);
+    transform: translateY(-2px);
+}
+
+.about-section,
+.collections-section,
+.reviews-section,
+.contact-section {
+    padding: 7rem 8vw;
+}
+
+.about-container {
+    align-items: center;
+    display: grid;
+    gap: clamp(3rem, 8vw, 8rem);
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+    margin: auto;
+    max-width: 1200px;
+}
+
+.about-subtitle {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+}
+
+.about-content h2 {
+    margin: 1rem 0 1.5rem;
+}
+
+.about-content p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.about-lead {
+    color: var(--ink) !important;
+    font-size: 1.05rem;
+}
+
+.about-badges {
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+.badge-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-number {
+    color: var(--wine);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+}
+
+.badge-text {
+    color: var(--muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.about-images {
+    min-height: 520px;
+    position: relative;
+}
+
+.image-wrapper {
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+    width: 100%;
+}
+
+.image-wrapper:hover img,
+.card-img:hover {
+    transform: scale(1.04);
+}
+
+.main-img {
+    height: 440px;
+    width: 78%;
+}
+
+.detail-img {
+    border: 12px solid var(--paper);
+    bottom: 0;
+    height: 250px;
+    position: absolute;
+    right: 0;
+    width: 48%;
+}
+
+.collections-section {
+    background: var(--cream);
+}
+
+.section-title {
+    margin: 0 auto 3rem;
+    max-width: 560px;
+    text-align: center;
+}
+
+.collection-grid,
+.reviews-grid {
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    max-width: 1250px;
+}
+
+.collection-card {
+    background: var(--paper);
+    padding-bottom: 1.4rem;
+    text-align: center;
+}
+
+.card-img {
+    background-position: center;
+    background-size: cover;
+    height: 280px;
+    transition: transform 500ms ease;
+}
+
+.collection-card h3 {
+    font-size: 0.76rem;
+    letter-spacing: 0.07em;
+    margin: 1.2rem 0 0.65rem;
+}
+
+.price-box {
+    align-items: center;
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.price {
+    color: var(--wine);
+    font-weight: 600;
+}
+
+.old-price {
+    color: #9c9189;
+    font-size: 0.8rem;
+    text-decoration: line-through;
+}
+
+.btn-secondary,
+.add-to-cart-btn {
+    background: var(--wine);
+    color: white;
+    margin: 0.2rem;
+    padding: 0.7rem 0.85rem;
+}
+
+.add-to-cart-btn {
+    background: transparent;
+    border: 1px solid var(--wine);
+    color: var(--wine);
+}
+
+.add-to-cart-btn:hover {
+    color: white;
+}
+
+.reviews-section {
+    background: var(--wine-dark);
+    color: white;
+}
+
+.section-header {
+    margin: auto auto 3rem;
+    max-width: 620px;
+    text-align: center;
+}
+
+.section-header h2 {
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    color: #dec8bd;
+}
+
+.reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.review-card {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1.5rem 0.5rem 2rem;
+}
+
+.stars {
+    color: var(--gold);
+    letter-spacing: 0.15em;
+}
+
+.review-text {
+    color: #f4e9e1;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    margin: 1.3rem 0 2rem;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewer-name {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.review-date {
+    color: #c8aaa0;
+    font-size: 0.75rem;
+}
+
+.contact-section {
+    background: var(--cream);
+    text-align: center;
+}
+
+.contact-container {
+    margin: auto;
+    max-width: 700px;
+}
+
+.contact-container > p {
+    color: var(--muted);
+    margin: 1rem auto 2.5rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    outline: 0;
+    padding: 1rem;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.contact-form .btn-primary {
+    justify-self: center;
+}
+
+.footer {
+    background: var(--ink);
+    color: #d8c7bc;
+    padding: 1.8rem 6vw;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+@media (max-width: 980px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-images {
+        margin: auto;
+        max-width: 650px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        gap: 1rem;
+        padding: 1rem 5vw;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 0.65rem 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.66rem;
+    }
+
+    .nav-icons input {
+        max-width: 80px;
+    }
+
+    .hero-section {
+        min-height: 68vh;
+        padding: 5rem 8vw;
+    }
+
+    .about-section,
+    .collections-section,
+    .reviews-section,
+    .contact-section {
+        padding: 5rem 6vw;
+    }
+
+    .collection-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-images {
+        min-height: 390px;
+    }
+
+    .main-img {
+        height: 330px;
+    }
+
+    .detail-img {
+        height: 180px;
+    }
+
+    .review-card {
+        padding: 1.5rem 0 1.5rem 1.25rem;
+    }
+}
